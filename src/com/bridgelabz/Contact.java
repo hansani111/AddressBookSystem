@@ -11,15 +11,28 @@ public class Contact {
     private String phoneNumber;
     private String email;
 
-    public Contact(String firstName, String lastName, String address, String city, String state, String zip, String phoneNumber, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+/*
+	public Contact(String firstName, String lastName, String address, String city, String state, String zip, String phoneNumber, String email) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+	}
+*/
+
+    public Contact() {
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setAddress(address);
+        this.setCity(city);
+        this.setState(state);
+        this.setZip(zip);
+        this.setPhoneNumber(phoneNumber);
+        this.setEmail(email);
     }
 
     public String getFirstName() {
@@ -86,8 +99,10 @@ public class Contact {
         this.email = email;
     }
 
+    //overloading the "toString()" to get the exact String output
     public String toString() {
         return "Contact Details:-\n" + "FirstName : " + firstName + "\nLastname : " + lastName + "\nAddress : " + address + "\nCity : " + city +
                 "\nState : " + state + "\nZip : " + zip + "\nPhone Number : " + phoneNumber + "\nEmail : " + email + "\n";
+
     }
 }
