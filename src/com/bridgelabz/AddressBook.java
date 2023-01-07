@@ -11,6 +11,7 @@ public class AddressBook {
     static ArrayList<Contact> addressbook = new ArrayList<>();
 
     public static void main(String[] args) {
+        System.out.println("welcome to address book problems");
 
         System.out.println("Enter Firstname : ");
         String firstName = sc.next();
