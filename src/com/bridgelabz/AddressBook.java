@@ -99,12 +99,26 @@ public class AddressBook {
         }
     }
 
+    /* Delete a contact*/
+    static void deleteContact() {
+        System.out.println("Enter the firstname of teh contact which you want to delete : ");
+        String name = sc.next();
+        for (int person = 0; person < addressbook.size(); person++) {
+            if (addressbook.get(person).getFirstName().equals(name)) {
+                addressbook.remove(person);
+            } else {
+                System.out.println("Contact NOT FOUND with '" + name + "'. Please check again and retry.");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         addContactDetails();
 
         boolean flag = true;
         while (flag) {
-            System.out.println("\n\nPRESS 1 to Add Contact   ||   PRESS 2 to Edit Contact");
+            System.out.println("\n*** Total Contacts present : " + addressbook.size() + " ***");
+            System.out.println("\n\nPRESS 1 to Add Contact   ||   PRESS 2 to Edit Contact   ||   PRESS 3 to DELETE Contact");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -114,8 +128,11 @@ public class AddressBook {
                 case 2:
                     editContactDetails();
                     break;
+                case 3:
+                    deleteContact();
+                    break;
                 default:
-                    System.out.println("Invalid Input!!!!");
+                    System.out.println("Invalid Input!!!! Please try again.");
                     break;
             }
         }
