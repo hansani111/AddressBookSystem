@@ -10,28 +10,43 @@ public class AddressBook {
     //Taking arraylist to save the contact details
     static ArrayList<Contact> addressbook = new ArrayList<>();
 
-    public static void main(String[] args) {
-        System.out.println("welcome to address book problems");
+    //Creating contact with this method
+    static Contact addContactDetails() {
+        Contact contact = new Contact();
 
         System.out.println("Enter Firstname : ");
-        String firstName = sc.next();
-        System.out.println("Enter lastname : ");
-        String lastName = sc.next();
-        System.out.println("Enter address : ");
-        String address = sc.next();
-        System.out.println("Enter city : ");
-        String city = sc.next();
-        System.out.println("Enter state : ");
-        String state = sc.next();
-        System.out.println("Enter zip : ");
-        String zip = sc.next();
-        System.out.println("Enter phoneNumber : ");
-        String phoneNumber = sc.next();
-        System.out.println("Enter email : ");
-        String email = sc.next();
+        contact.setFirstName(sc.next());
 
-        Contact contact1 = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
-        addressbook.add(contact1);
+        System.out.println("Enter lastname : ");
+        contact.setLastName(sc.next());
+
+        System.out.println("Enter address : ");
+        contact.setAddress(sc.next());
+
+        System.out.println("Enter city : ");
+        contact.setCity(sc.next());
+
+        System.out.println("Enter state : ");
+        contact.setState(sc.next());
+
+        System.out.println("Enter zip : ");
+        contact.setZip(sc.next());
+
+        System.out.println("Enter phoneNumber : ");
+        contact.setPhoneNumber(sc.next());
+
+        System.out.println("Enter email : ");
+        contact.setEmail(sc.next());
+
+        addressbook.add(contact);        //storing the contact details in arraylist
+
+        System.out.println();
         System.out.println(addressbook);
+
+        return contact;
+    }
+
+    public static void main(String[] args) {
+        addContactDetails();
     }
 }
